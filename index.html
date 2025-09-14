@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xelandra</title>
+
+  <link rel="icon" type="image/png" href="favicon.png">
+
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Blob Animation */
+    @keyframes blob {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      33% {
+        transform: translate(20px, -10px) scale(1.1);
+      }
+
+      66% {
+        transform: translate(-20px, 20px) scale(0.9);
+      }
+    }
+
+    .animate-blob {
+      animation: blob 8s infinite ease-in-out;
+    }
+
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
+
+    /* Fade In Animation */
+    .animate-fadeIn {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s forwards;
+    }
+
+    .animate-fadeIn.delay-300 {
+      animation-delay: 0.3s;
+    }
+
+    .animate-fadeIn.delay-600 {
+      animation-delay: 0.6s;
+    }
+
+    .animate-fadeIn.delay-900 {
+      animation-delay: 0.9s;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<!-- Navbar -->
+<div id="navbar"></div>
+
+<!-- Hero Section with Floating Images -->
+<section
+  class="relative min-h-screen flex items-center overflow-hidden bg-cover bg-center bg-no-repeat pt-24 md:pt-32 pb-20 md:pb-32"
+  style="background-image: url('/154657939_4bdbef88-fa71-47d1-be38-46e7beab3330.jpg');">
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/30"></div>
+
+  <!-- Content -->
+  <div
+    class="relative z-10 container mx-auto px-6 lg:px-20 flex flex-col lg:flex-row items-center justify-between h-full">
+
+    <!-- Left Text Content -->
+    <div class="flex-1 flex flex-col justify-center max-w-xl text-center lg:text-left">
+      <h1
+        class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-snug md:leading-tight tracking-tight text-gray-50">
+        <span
+          class="inline-block px-6 py-2 mb-6 bg-white/20 backdrop-blur-md text-white text-lg md:text-2xl font-semibold rounded-full shadow-lg border border-white/30 tracking-wide animate-fadeIn delay-300">
+          Empowering Your
+        </span>
+        <span
+          class="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 inline-block animate-fadeIn delay-600">
+          E-Commerce Vision
+        </span>
+      </h1>
+
+      <p class="text-gray-200 text-lg md:text-xl max-w-2xl leading-relaxed mt-8 animate-fadeIn delay-900">
+        We craft <span class="font-semibold text-white">innovative, scalable</span> digital commerce solutions for
+        ambitious businesses.
+        From strategy to flawless execution, we power your <span class="text-gray-300 font-semibold">online
+          growth.</span>
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-5 mt-10 animate-fadeIn delay-900 justify-center lg:justify-start">
+        <a href="#get-started"
+          class="px-8 py-4 bg-gradient-to-r from-[#688a2f] to-[#8fb54f] text-white font-semibold rounded-full shadow-lg 
+                  hover:from-[#577127] hover:to-[#7ca83e] transition-all duration-300 transform hover:-translate-y-1 hover:scale-105">
+          Get Started
+        </a>
+        <a href="#consultation"
+          class="px-8 py-4 bg-white/30 backdrop-blur-md border border-white/40 text-white font-semibold rounded-full 
+                  hover:bg-white hover:text-gray-900 hover:border-[#688a2f] transition-all duration-300 transform hover:-translate-y-1 hover:scale-105">
+          Request Consultation
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Card Section -->
+    <div class="flex-1 mt-12 lg:mt-0 lg:ml-10 relative flex flex-col items-center">
+      <!-- Card -->
+      <div
+        class="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-6 lg:p-10 max-w-sm border border-gray-200 animate-fadeIn delay-1200 relative z-10 text-center lg:text-left">
+        <h3 class="text-xl font-bold text-gray-800 mb-4">Xelandra Advantage</h3>
+        <p class="text-gray-600 mb-6">
+          Scalable digital commerce solutions that power growth—strategy, delivery, and optimization.
+        </p>
+        <a href="#get-started"
+          class="inline-block px-6 py-3 bg-gradient-to-r from-[#688a2f] to-[#8fb54f] text-white font-semibold rounded-full shadow-lg 
+                hover:from-[#577127] hover:to-[#7ca83e] transition-all duration-300 transform hover:-translate-y-1 hover:scale-105">
+          Get Started
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Circular Text Badge -->
+  <div class="absolute top-10 right-10 hidden md:block z-20">
+    <svg viewBox="0 0 200 200" class="w-40 h-40 animate-spin-slow">
+      <defs>
+        <path
+          id="circlePath"
+          d="M100,100
+             m-75,0
+             a75,75 0 1,1 150,0
+             a75,75 0 1,1 -150,0"
+        />
+      </defs>
+      <text font-size="16" class="uppercase font-semibold tracking-[4px] fill-[#688a2f]">
+        <textPath href="#circlePath" startOffset="0%">
+          ✦ Modern ✦ Scalable ✦ Creative ✦ Innovative
+        </textPath>
+      </text>
+    </svg>
+  </div>
+
+
+</section>
+
+<!-- Tailwind CSS Animation -->
+<style>
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+</style>
+
+
+
+
+<!-- E-Commerce Development Section -->
+<section
+  class="relative bg-gradient-to-br from-white via-green-50 to-[#f5fdf0] py-20 md:py-28 px-6 sm:px-10 lg:px-20 overflow-hidden">
+
+  <!-- Floating Blobs -->
+  <div
+    class="absolute -top-32 -left-20 w-72 sm:w-96 h-72 sm:h-96 bg-gradient-to-r from-green-200 to-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40">
+  </div>
+  <div
+    class="absolute -bottom-40 -right-20 w-72 sm:w-96 h-72 sm:h-96 bg-gradient-to-r from-yellow-200 to-green-300 rounded-full mix-blend-multiply filter blur-3xl opacity-40">
+  </div>
+
+  <!-- Content -->
+  <div class="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+    <!-- Left Text -->
+    <div class="space-y-6 text-center lg:text-left">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900">
+        <span class="block">Comprehensive</span>
+        <span class="bg-gradient-to-r from-[#688a2f] to-green-600 text-transparent bg-clip-text relative inline-block">
+          E-Commerce Development
+          <span class="absolute left-0 bottom-1 w-full h-2 bg-green-200/60 rounded-full -z-10"></span>
+        </span>
+      </h2>
+      <p class="text-base sm:text-lg text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
+        Whether you’re launching a new store, optimizing your platform,
+        or expanding into new markets — we deliver end-to-end solutions
+        powered by <span class="font-semibold text-[#688a2f]">Shopify, Magento, WooCommerce, and commercetools</span>.
+      </p>
+    </div>
+
+    <!-- Feature Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <!-- Card -->
+      <div
+        class="group p-6 rounded-2xl bg-white/90 backdrop-blur-md shadow-lg border border-green-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <i class='bx bxs-cart text-4xl text-[#688a2f] mb-3 group-hover:scale-110 transition'></i>
+        <h3 class="text-lg font-semibold text-gray-800">Full-cycle Development</h3>
+        <p class="text-sm text-gray-600 mt-1">From strategy to deployment, we cover it all.</p>
+      </div>
+      <div
+        class="group p-6 rounded-2xl bg-white/90 backdrop-blur-md shadow-lg border border-green-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <i class='bx bx-transfer text-4xl text-[#688a2f] mb-3 group-hover:scale-110 transition'></i>
+        <h3 class="text-lg font-semibold text-gray-800">Platform Migration</h3>
+        <p class="text-sm text-gray-600 mt-1">Seamless upgrades and migrations.</p>
+      </div>
+      <div
+        class="group p-6 rounded-2xl bg-white/90 backdrop-blur-md shadow-lg border border-green-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <i class='bx bxs-paint text-4xl text-[#688a2f] mb-3 group-hover:scale-110 transition'></i>
+        <h3 class="text-lg font-semibold text-gray-800">UI/UX Design</h3>
+        <p class="text-sm text-gray-600 mt-1">Conversion-driven, modern designs.</p>
+      </div>
+      <div
+        class="group p-6 rounded-2xl bg-white/90 backdrop-blur-md shadow-lg border border-green-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <i class='bx bxs-cog text-4xl text-[#688a2f] mb-3 group-hover:scale-110 transition'></i>
+        <h3 class="text-lg font-semibold text-gray-800">Custom Integrations</h3>
+        <p class="text-sm text-gray-600 mt-1">Tailored features to fit your needs.</p>
+      </div>
+      <div
+        class="group p-6 rounded-2xl bg-white/90 backdrop-blur-md shadow-lg border border-green-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <i class='bx bxs-shield-alt-2 text-4xl text-[#688a2f] mb-3 group-hover:scale-110 transition'></i>
+        <h3 class="text-lg font-semibold text-gray-800">Security</h3>
+        <p class="text-sm text-gray-600 mt-1">Enterprise-grade security & performance.</p>
+      </div>
+      <div
+        class="group p-6 rounded-2xl bg-white/90 backdrop-blur-md shadow-lg border border-green-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <i class='bx bx-help-circle text-4xl text-[#688a2f] mb-3 group-hover:scale-110 transition'></i>
+        <h3 class="text-lg font-semibold text-gray-800">Support</h3>
+        <p class="text-sm text-gray-600 mt-1">Ongoing maintenance & improvements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section
+  class="relative bg-gradient-to-br from-white via-green-50 to-white py-20 md:py-28 px-6 sm:px-10 lg:px-20 overflow-hidden">
+
+  <div class="max-w-7xl mx-auto relative z-10">
+
+    <!-- Heading -->
+    <div class="text-center mb-16 md:mb-20">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900">
+        Why <span class="bg-gradient-to-r from-[#688a2f] to-green-700 bg-clip-text text-transparent">Choose Us?</span>
+      </h2>
+      <p class="mt-4 md:mt-6 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+        We combine expertise, innovation and  collaboration to deliver future-ready e-commerce solutions.
+      </p>
+    </div>
+
+    <!-- Features -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 mb-16 md:mb-24">
+      <div
+        class="group p-6 sm:p-8 rounded-2xl bg-white/90 backdrop-blur-lg border border-green-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <div
+          class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-xl bg-gradient-to-tr from-green-200 to-green-100 text-[#688a2f] mb-4 group-hover:scale-110 transition">
+          <i class='bx bx-globe text-2xl sm:text-3xl'></i>
+        </div>
+        <h3 class="font-semibold text-lg text-gray-900">Platform Independence</h3>
+        <p class="text-gray-600 mt-3 text-sm">We recommend and support the best technology to drive your growth.</p>
+      </div>
+
+      <div
+        class="group p-6 sm:p-8 rounded-2xl bg-white/90 backdrop-blur-lg border border-green-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <div
+          class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-xl bg-gradient-to-tr from-green-200 to-green-100 text-[#688a2f] mb-4 group-hover:scale-110 transition">
+          <i class='bx bx-user-check text-2xl sm:text-3xl'></i>
+        </div>
+        <h3 class="font-semibold text-lg text-gray-900">Partner-Led Approach</h3>
+        <p class="text-gray-600 mt-3 text-sm">Transparent collaboration ensures tailored solutions from day one.</p>
+      </div>
+
+      <div
+        class="group p-6 sm:p-8 rounded-2xl bg-white/90 backdrop-blur-lg border border-green-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <div
+          class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-xl bg-gradient-to-tr from-green-200 to-green-100 text-[#688a2f] mb-4 group-hover:scale-110 transition">
+          <i class='bx bx-group text-2xl sm:text-3xl'></i>
+        </div>
+        <h3 class="font-semibold text-lg text-gray-900">Expert Team</h3>
+        <p class="text-gray-600 mt-3 text-sm">Our seasoned engineers and designers deliver across industries.</p>
+      </div>
+
+      <div
+        class="group p-6 sm:p-8 rounded-2xl bg-white/90 backdrop-blur-lg border border-green-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <div
+          class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-xl bg-gradient-to-tr from-green-200 to-green-100 text-[#688a2f] mb-4 group-hover:scale-110 transition">
+          <i class='bx bx-bulb text-2xl sm:text-3xl'></i>
+        </div>
+        <h3 class="font-semibold text-lg text-gray-900">Continuous Innovation</h3>
+        <p class="text-gray-600 mt-3 text-sm">Stay ahead with automation, AI, and modern tools.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div
+      class="bg-gradient-to-r from-[#688a2f] to-green-700 text-white rounded-2xl md:rounded-3xl p-8 md:p-12 text-center shadow-xl">
+      <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Online Business?</h3>
+      <p class="text-base sm:text-lg text-green-100 max-w-2xl mx-auto mb-6 md:mb-8">Let’s turn your e-commerce vision
+        into reality. Contact us today for a personalized consultation.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+        <a href="#contact"
+          class="px-6 sm:px-8 py-3 bg-white text-[#688a2f] font-semibold rounded-xl shadow-lg hover:bg-green-50 transition">Contact
+          Us</a>
+        <a href="#discovery"
+          class="px-6 sm:px-8 py-3 bg-green-900/40 border border-white/50 text-white font-semibold rounded-xl hover:bg-green-900/60 transition">Book
+          a Free Discovery Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Services Section Wrapper -->
+<section id="services" class="relative bg-green-50 py-28 px-6 lg:px-20 overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Global Section Heading -->
+    <div class="text-center mb-20">
+      <h2 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+        Our <span class="bg-gradient-to-r from-[#688a2f] to-green-700 bg-clip-text text-transparent">Services</span>
+      </h2>
+      <p class="mt-6 text-lg text-gray-700 max-w-2xl mx-auto">
+        At Xelandra, we deliver end-to-end e-commerce solutions that help your business scale with confidence.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid gap-20">
+
+      <!-- Service Item Template -->
+      <div class="bg-white rounded-3xl shadow-lg p-10 hover:shadow-2xl transition-all duration-300">
+        <div class="lg:grid lg:grid-cols-3 gap-12 items-start">
+
+          <!-- Text Content -->
+          <div class="lg:col-span-2 space-y-6">
+            <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full 
+              bg-gradient-to-r from-green-100 via-green-200 to-green-300 
+              border border-green-400/40 shadow-sm
+              text-green-900 text-sm font-semibold tracking-wide uppercase
+              backdrop-blur-md hover:shadow-md transition-all duration-300">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-700"></span>
+              </span>
+              Consulting
+            </span>
+
+            <h3 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+              E-Commerce <span class="bg-gradient-to-r from-[#688a2f] to-green-700 bg-clip-text text-transparent">Strategy Consulting</span>
+            </h3>
+
+            <p class="text-lg text-gray-700 max-w-3xl">
+              Tailored, platform-agnostic strategies that align technology with your growth goals.
+            </p>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              From market analysis and process automation to innovation roadmaps, our experts ensure every tech decision
+              is driven by your business objectives.
+            </p>
+          </div>
+
+          <!-- Cards -->
+          <div class="space-y-6">
+            <div class="flex items-start gap-5 p-6 bg-green-50 rounded-3xl border border-green-200 shadow hover:shadow-lg transition-all duration-300">
+              <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white shadow text-2xl">
+                <i class="fa-solid fa-chart-simple"></i>
+              </div>
+              <p class="text-gray-800 font-medium text-lg">Market analysis & opportunity discovery</p>
+            </div>
+
+            <div class="flex items-start gap-5 p-6 bg-green-50 rounded-3xl border border-green-200 shadow hover:shadow-lg transition-all duration-300">
+              <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white shadow text-2xl">
+                <i class="fa-solid fa-stairs"></i>
+              </div>
+              <p class="text-gray-800 font-medium text-lg">Innovation roadmap creation</p>
+            </div>
+
+            <div class="flex items-start gap-5 p-6 bg-green-50 rounded-3xl border border-green-200 shadow hover:shadow-lg transition-all duration-300">
+              <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white shadow text-2xl">
+                <i class="fa-solid fa-gears"></i>
+              </div>
+              <p class="text-gray-800 font-medium text-lg">Process automation planning</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- E-Commerce Website Development -->
+      <div class="bg-white rounded-3xl shadow-lg p-10 hover:shadow-2xl transition-all duration-300">
+        <div class="lg:grid lg:grid-cols-3 gap-12 items-start">
+          <div class="lg:col-span-2 space-y-6">
+            <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-green-100 via-green-200 to-green-300 border border-green-400/40 shadow-sm text-green-900 text-sm font-semibold tracking-wide uppercase backdrop-blur-md hover:shadow-md transition-all duration-300">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-700"></span>
+              </span>
+              Website Development
+            </span>
+
+            <h3 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+              E-Commerce <span class="bg-gradient-to-r from-[#688a2f] to-green-700 bg-clip-text text-transparent">Website Development</span>
+            </h3>
+
+            <p class="text-lg text-gray-700 max-w-3xl">
+              Build scalable, feature-rich, and high-converting online stores across all major platforms.
+            </p>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              Our platform-agnostic team delivers high-performance Shopify, Magento, WooCommerce, and headless commerce solutions designed for scale.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-5 p-6 bg-green-50 rounded-3xl border border-green-200 shadow hover:shadow-lg transition-all duration-300">
+              <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white shadow text-2xl">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <p class="text-gray-800 font-medium text-lg">Shopify, Magento, WooCommerce, Commercetools expertise</p>
+            </div>
+
+            <div class="flex items-start gap-5 p-6 bg-green-50 rounded-3xl border border-green-200 shadow hover:shadow-lg transition-all duration-300">
+              <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white shadow text-2xl">
+                <i class="fa-solid fa-crop-simple"></i>
+              </div>
+              <p class="text-gray-800 font-medium text-lg">Responsive and user-friendly designs</p>
+            </div>
+
+            <div class="flex items-start gap-5 p-6 bg-green-50 rounded-3xl border border-green-200 shadow hover:shadow-lg transition-all duration-300">
+              <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white shadow text-2xl">
+                <i class="fa-solid fa-sitemap"></i>
+              </div>
+              <p class="text-gray-800 font-medium text-lg">Scalable architecture for growth</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Custom Integrations -->
+      <div class="bg-white rounded-3xl shadow-lg p-10 hover:shadow-2xl transition-all duration-300">
+        <div class="lg:grid lg:grid-cols-3 gap-12 items-start">
+          <div class="lg:col-span-2 space-y-6">
+            <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-green-100 via-green-200 to-green-300 border border-green-400/40 shadow-sm text-green-900 text-sm font-semibold tracking-wide uppercase backdrop-blur-md hover:shadow-md transition-all duration-300">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-700"></span>
+              </span>
+              Custom Integrations
+            </span>
+
+            <h3 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+              E-Commerce <span class="bg-gradient-to-r from-[#688a2f] to-green-700 bg-clip-text text-transparent">Custom Integrations</span>
+            </h3>
+
+            <p class="text-lg text-gray-700 max-w-3xl">
+              Connect your store seamlessly to the powerful software ecosystem that drives your business growth.
+            </p>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              Our expert team delivers smooth, secure, and scalable integrations with ERPs, CRMs, third-party APIs, payment systems, and logistics platforms.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-5 p-6 bg-green-50 rounded-3xl border border-green-200 shadow hover:shadow-lg transition-all duration-300">
+              <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white shadow text-2xl">
+                <i class="fa-solid fa-diagram-project"></i>
+              </div>
+              <p class="text-gray-800 font-medium text-lg">ERP and CRM integrations</p>
+            </div>
+
+            <div class="flex items-start gap-5 p-6 bg-green-50 rounded-3xl border border-green-200 shadow hover:shadow-lg transition-all duration-300">
+              <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white shadow text-2xl">
+                <i class="fa-solid fa-credit-card"></i>
+              </div>
+              <p class="text-gray-800 font-medium text-lg">Payment gateway and fulfillment API integrations</p>
+            </div>
+
+            <div class="flex items-start gap-5 p-6 bg-green-50 rounded-3xl border border-green-200 shadow hover:shadow-lg transition-all duration-300">
+              <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white shadow text-2xl">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+              <p class="text-gray-800 font-medium text-lg">Third-party marketing tool connectivity</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UI/UX Design -->
+      <div class="bg-white rounded-3xl shadow-lg p-10 hover:shadow-2xl transition-all duration-300">
+        <div class="lg:grid lg:grid-cols-3 gap-12 items-start">
+          <div class="lg:col-span-2 space-y-6">
+            <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-green-100 via-green-200 to-green-300 border border-green-400/40 shadow-sm text-green-900 text-sm font-semibold tracking-wide uppercase backdrop-blur-md hover:shadow-md transition-all duration-300">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-700"></span>
+              </span>
+              UI/UX Design
+            </span>
+
+            <h3 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+              E-Commerce <span class="bg-gradient-to-r from-[#688a2f] to-green-700 bg-clip-text text-transparent">UI/UX Design</span>
+            </h3>
+
+            <p class="text-lg text-gray-700 max-w-3xl">
+              Delight your customers and optimize conversion rates with intuitive, visually engaging e-commerce experiences.
+            </p>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              From wireframing and prototyping to responsive, accessible designs, we ensure smooth, brand-consistent, and conversion-driven interactions.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-5 p-6 bg-green-50 rounded-3xl border border-green-200 shadow hover:shadow-lg transition-all duration-300">
+              <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white shadow text-2xl">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </div>
+              <p class="text-gray-800 font-medium text-lg">Wireframing and prototyping</p>
+            </div>
+
+            <div class="flex items-start gap-5 p-6 bg-green-50 rounded-3xl border border-green-200 shadow hover:shadow-lg transition-all duration-300">
+              <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white shadow text-2xl">
+                <i class="fa-solid fa-mobile-screen"></i>
+              </div>
+              <p class="text-gray-800 font-medium text-lg">Responsive, accessible design</p>
+            </div>
+
+            <div class="flex items-start gap-5 p-6 bg-green-50 rounded-3xl border border-green-200 shadow hover:shadow-lg transition-all duration-300">
+              <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white shadow text-2xl">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <p class="text-gray-800 font-medium text-lg">Conversion-driven interface optimization</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Performance Optimization -->
+      <div class="bg-white rounded-3xl shadow-lg p-10 hover:shadow-2xl transition-all duration-300">
+        <div class="lg:grid lg:grid-cols-3 gap-12 items-start">
+          <div class="lg:col-span-2 space-y-6">
+            <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-green-100 via-green-200 to-green-300 border border-green-400/40 shadow-sm text-green-900 text-sm font-semibold tracking-wide uppercase backdrop-blur-md hover:shadow-md transition-all duration-300">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-700"></span>
+              </span>
+              Performance Optimization
+            </span>
+
+            <h3 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+              E-Commerce <span class="bg-gradient-to-r from-[#688a2f] to-green-700 bg-clip-text text-transparent">Performance Optimization</span>
+            </h3>
+
+            <p class="text-lg text-gray-700 max-w-3xl">
+              Boost store speed, uptime, and reliability to maximize customer engagement and sales.
+            </p>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              Our team conducts comprehensive audits, implements caching, CDN strategies, and code optimizations to ensure fast-loading, high-performing e-commerce stores.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-5 p-6 bg-green-50 rounded-3xl border border-green-200 shadow hover:shadow-lg transition-all duration-300">
+              <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white shadow text-2xl">
+                <i class="fa-solid fa-tachometer-alt-fast"></i>
+              </div>
+              <p class="text-gray-800 font-medium text-lg">Site speed optimization</p>
+            </div>
+
+            <div class="flex items-start gap-5 p-6 bg-green-50 rounded-3xl border border-green-200 shadow hover:shadow-lg transition-all duration-300">
+              <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white shadow text-2xl">
+                <i class="fa-solid fa-server"></i>
+              </div>
+              <p class="text-gray-800 font-medium text-lg">Uptime & server reliability monitoring</p>
+            </div>
+
+            <div class="flex items-start gap-5 p-6 bg-green-50 rounded-3xl border border-green-200 shadow hover:shadow-lg transition-all duration-300">
+              <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white shadow text-2xl">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <p class="text-gray-800 font-medium text-lg">Code & database optimizations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maintenance & Support -->
+      <div class="bg-white rounded-3xl shadow-lg p-10 hover:shadow-2xl transition-all duration-300">
+        <div class="lg:grid lg:grid-cols-3 gap-12 items-start">
+          <div class="lg:col-span-2 space-y-6">
+            <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-green-100 via-green-200 to-green-300 border border-green-400/40 shadow-sm text-green-900 text-sm font-semibold tracking-wide uppercase backdrop-blur-md hover:shadow-md transition-all duration-300">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-700"></span>
+              </span>
+              Maintenance & Support
+            </span>
+
+            <h3 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+              E-Commerce <span class="bg-gradient-to-r from-[#688a2f] to-green-700 bg-clip-text text-transparent">Maintenance & Support</span>
+            </h3>
+
+            <p class="text-lg text-gray-700 max-w-3xl">
+              Continuous monitoring, updates, and support to keep your e-commerce store secure, fast, and reliable.
+            </p>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              From plugin updates and security patches to customer support integration and technical troubleshooting, we ensure your store runs smoothly 24/7.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-5 p-6 bg-green-50 rounded-3xl border border-green-200 shadow hover:shadow-lg transition-all duration-300">
+              <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white shadow text-2xl">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <p class="text-gray-800 font-medium text-lg">Security & software updates</p>
+            </div>
+
+            <div class="flex items-start gap-5 p-6 bg-green-50 rounded-3xl border border-green-200 shadow hover:shadow-lg transition-all duration-300">
+              <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white shadow text-2xl">
+                <i class="fa-solid fa-headset"></i>
+              </div>
+              <p class="text-gray-800 font-medium text-lg">24/7 technical support</p>
+            </div>
+
+            <div class="flex items-start gap-5 p-6 bg-green-50 rounded-3xl border border-green-200 shadow hover:shadow-lg transition-all duration-300">
+              <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white shadow text-2xl">
+                <i class="fa-solid fa-tools"></i>
+              </div>
+              <p class="text-gray-800 font-medium text-lg">Performance monitoring & troubleshooting</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Platforms Section -->
+<section id="platforms" class="relative py-24 bg-gradient-to-br from-green-50 via-white to-green-100 rounded-t-[4rem] rounded-b-[4rem] shadow-lg">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+    <!-- Section Header -->
+    <div class="text-center mb-20 opacity-0 scale-95">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+        E-Commerce Development Platforms
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+        Scalable, future-ready commerce solutions for every business size.
+      </p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <!-- Shopify -->
+      <div class="platform-card group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 p-8 hover:-translate-y-3 opacity-0 scale-95 overflow-hidden">
+        <div class="flex flex-col sm:flex-row items-center gap-4 mb-4">
+          <div class="w-16 h-16 flex-shrink-0 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white text-3xl shadow-md">
+            
+            <i class="fa-brands fa-shopify"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 text-center sm:text-left">Shopify</h3>
+        </div>
+        <p class="text-gray-700 leading-relaxed max-w-full">
+          Seamless store setup, app integrations, and migrations for fast-growing brands.
+        </p>
+      </div>
+
+      <!-- Magento -->
+      <div class="platform-card group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 p-8 hover:-translate-y-3 opacity-0 scale-95 overflow-hidden">
+        <div class="flex flex-col sm:flex-row items-center gap-4 mb-4">
+          <div class="w-16 h-16 flex-shrink-0 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white text-3xl shadow-md">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 text-center sm:text-left">Magento</h3>
+        </div>
+        <p class="text-gray-700 leading-relaxed max-w-full">
+          B2B/B2C implementation, custom modules, and scalable commerce solutions.
+        </p>
+      </div>
+
+      <!-- Commercetools -->
+      <div class="platform-card group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 p-8 hover:-translate-y-3 opacity-0 scale-95 overflow-hidden">
+        <div class="flex flex-col sm:flex-row items-center gap-4 mb-4">
+          <div class="w-16 h-16 flex-shrink-0 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white text-3xl shadow-md">
+            <i class="fa-solid fa-wrench"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 text-center sm:text-left">Commercetools</h3>
+        </div>
+        <p class="text-gray-700 leading-relaxed max-w-full">
+          Composable commerce & headless integrations for modern enterprises.
+        </p>
+      </div>
+
+      <!-- WooCommerce -->
+      <div class="platform-card group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 p-8 hover:-translate-y-3 opacity-0 scale-95 overflow-hidden">
+        <div class="flex flex-col sm:flex-row items-center gap-4 mb-4">
+          <div class="w-16 h-16 flex-shrink-0 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white text-3xl shadow-md">
+            <i class="fa-solid fa-shop"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 text-center sm:text-left">WooCommerce</h3>
+        </div>
+        <p class="text-gray-700 leading-relaxed max-w-full">
+          WordPress-powered e-commerce with seamless integrations.
+        </p>
+      </div>
+
+      <!-- BigCommerce -->
+      <div class="platform-card group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 p-8 hover:-translate-y-3 opacity-0 scale-95 overflow-hidden">
+        <div class="flex flex-col sm:flex-row items-center gap-4 mb-4">
+          <div class="w-16 h-16 flex-shrink-0 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#688a2f] to-green-700 text-white text-3xl shadow-md">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 text-center sm:text-left">BigCommerce</h3>
+        </div>
+        <p class="text-gray-700 leading-relaxed max-w-full">
+          Cloud-based e-commerce solutions for mid-market and enterprise retailers.
+        </p>
+      </div>
+
+      <!-- Headless Commerce -->
+      <div class="platform-card group lg:col-span-3 bg-gradient-to-br from-[#688a2f] to-green-700 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-10 hover:-translate-y-3 opacity-0 scale-95 overflow-hidden">
+        <div class="flex flex-col sm:flex-row items-center gap-4 mb-6">
+          <div class="w-20 h-20 flex-shrink-0 flex items-center justify-center rounded-xl bg-white shadow-md text-4xl text-green-700">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3 class="text-3xl font-extrabold text-white text-center sm:text-left">Headless Commerce</h3>
+        </div>
+        <p class="text-white/90 text-lg leading-relaxed max-w-full lg:max-w-3xl">
+          Decoupled front-end solutions for lightning-fast, future-proof experiences that drive innovation and flexibility.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="case-studies" class="relative py-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <!-- Section Heading -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+        Exemplifying <br>
+        <span class="bg-gradient-to-r from-[#688a2f] to-green-700 bg-clip-text text-transparent">
+          E-Commerce Success
+        </span>
+      </h2>
+      <p class="mt-6 text-lg md:text-xl text-gray-600 leading-relaxed">
+        A glimpse of impactful projects that showcase how we deliver measurable results 
+        with modern commerce solutions.
+      </p>
+    </div>
+
+    <!-- Case Study Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <div class="group relative rounded-2xl border border-gray-200 shadow-md hover:shadow-2xl bg-white transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+        <div class="relative">
+          <img src="./images/117137.jpg" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute bottom-3 right-3 bg-black/50 px-2 py-1 rounded-lg">
+            <div class="flex items-center gap-1 text-green-500">
+              <!-- Full Star -->
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 
+                3.967a1 1 0 00.95.69h4.174c.969 0 
+                1.371 1.24.588 1.81l-3.38 2.455a1 1 0 
+                00-.364 1.118l1.286 3.966c.3.922-.755 
+                1.688-1.54 1.118l-3.38-2.455a1 1 0 
+                00-1.175 0l-3.38 2.455c-.785.57-1.84-.196-1.54-1.118l1.286-3.966a1 1 0 
+                00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.174a1 
+                1 0 00.95-.69l1.286-3.967z"/>
+              </svg>
+              <!-- repeat 3 more full stars -->
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 
+              3.967a1 1 0 00.95.69h4.174c.969 0 
+              1.371 1.24.588 1.81l-3.38 2.455a1 1 0 
+              00-.364 1.118l1.286 3.966c.3.922-.755 
+              1.688-1.54 1.118l-3.38-2.455a1 1 0 
+              00-1.175 0l-3.38 2.455c-.785.57-1.84-.196-1.54-1.118l1.286-3.966a1 1 0 
+              00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.174a1 
+              1 0 00.95-.69l1.286-3.967z"/></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 
+              3.967a1 1 0 00.95.69h4.174c.969 0 
+              1.371 1.24.588 1.81l-3.38 2.455a1 1 0 
+              00-.364 1.118l1.286 3.966c.3.922-.755 
+              1.688-1.54 1.118l-3.38-2.455a1 1 0 
+              00-1.175 0l-3.38 2.455c-.785.57-1.84-.196-1.54-1.118l1.286-3.966a1 1 0 
+              00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.174a1 
+              1 0 00.95-.69l1.286-3.967z"/></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 
+              3.967a1 1 0 00.95.69h4.174c.969 0 
+              1.371 1.24.588 1.81l-3.38 2.455a1 1 0 
+              00-.364 1.118l1.286 3.966c.3.922-.755 
+              1.688-1.54 1.118l-3.38-2.455a1 1 0 
+              00-1.175 0l-3.38 2.455c-.785.57-1.84-.196-1.54-1.118l1.286-3.966a1 1 0 
+              00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.174a1 
+              1 0 00.95-.69l1.286-3.967z"/></svg>
+              <!-- Half Star -->
+              <svg class="w-5 h-5 fill-current opacity-50" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 
+              3.967a1 1 0 00.95.69h4.174c.969 0 
+              1.371 1.24.588 1.81l-3.38 2.455a1 1 0 
+              00-.364 1.118l1.286 3.966c.3.922-.755 
+              1.688-1.54 1.118l-3.38-2.455a1 1 0 
+              00-1.175 0l-3.38 2.455c-.785.57-1.84-.196-1.54-1.118l1.286-3.966a1 1 0 
+              00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.174a1 
+              1 0 00.95-.69l1.286-3.967z"/></svg>
+              <span class="text-sm text-white ml-2">4.0</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Fashion Brand — Shopify</h3>
+          <p class="text-gray-600 text-sm mb-4">Migrated from legacy to Shopify with faster load times & seamless mobile shopping.</p>
+          <p class="text-sm text-green-700 font-semibold">+18% conversions</p>
+        </div>
+      </div>
+
+
+      <!-- Card 2 -->
+<div class="group relative rounded-2xl border border-gray-200 shadow-md hover:shadow-2xl bg-white transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+  <div class="relative">
+    <img src="./images/2149483821.jpg" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+    <div class="absolute bottom-3 right-3 bg-black/50 px-2 py-1 rounded-lg">
+      <div class="flex items-center gap-1 text-green-500">
+        <!-- Full Stars (5/5) -->
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.174c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.286 3.966c.3.922-.755 1.688-1.54 1.118l-3.38-2.455a1 1 0 00-1.175 0l-3.38 2.455c-.785.57-1.84-.196-1.54-1.118l1.286-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.174a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.174c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.286 3.966c.3.922-.755 1.688-1.54 1.118l-3.38-2.455a1 1 0 00-1.175 0l-3.38 2.455c-.785.57-1.84-.196-1.54-1.118l1.286-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.174a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.174c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.286 3.966c.3.922-.755 1.688-1.54 1.118l-3.38-2.455a1 1 0 00-1.175 0l-3.38 2.455c-.785.57-1.84-.196-1.54-1.118l1.286-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.174a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.174c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.286 3.966c.3.922-.755 1.688-1.54 1.118l-3.38-2.455a1 1 0 00-1.175 0l-3.38 2.455c-.785.57-1.84-.196-1.54-1.118l1.286-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.174a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.174c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.286 3.966c.3.922-.755 1.688-1.54 1.118l-3.38-2.455a1 1 0 00-1.175 0l-3.38 2.455c-.785.57-1.84-.196-1.54-1.118l1.286-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.174a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+        <span class="text-sm text-white ml-2">5.0</span>
+      </div>
+    </div>
+  </div>
+  <div class="p-5">
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">B2B — Magento Expansion</h3>
+    <p class="text-gray-600 text-sm mb-4">Advanced pricing, dashboards, and ERP sync for faster bulk orders.</p>
+    <p class="text-sm text-green-700 font-semibold">2x faster orders</p>
+  </div>
+</div>
+
+
+<!-- Card 3 -->
+<div class="group relative rounded-2xl border border-gray-200 shadow-md hover:shadow-2xl bg-white transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+  <div class="relative">
+    <img src="./images/115737.jpg" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+    <div class="absolute bottom-3 right-3 bg-black/50 px-2 py-1 rounded-lg">
+      <div class="flex items-center gap-1 text-green-500">
+        <!-- Full Stars -->
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.174c.969 0 
+          1.371 1.24.588 1.81l-3.38 2.455a1 1 0 
+          00-.364 1.118l1.286 3.966c.3.922-.755 
+          1.688-1.54 1.118l-3.38-2.455a1 1 0 
+          00-1.175 0l-3.38 2.455c-.785.57-1.84-.196-1.54-1.118l1.286-3.966a1 1 0 
+          00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.174a1 
+          1 0 00.95-.69l1.286-3.967z"/>
+        </svg>
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 
+          3.967a1 1 0 00.95.69h4.174c.969 0 
+          1.371 1.24.588 1.81l-3.38 2.455a1 1 0 
+          00-.364 1.118l1.286 3.966c.3.922-.755 
+          1.688-1.54 1.118l-3.38-2.455a1 1 0 
+          00-1.175 0l-3.38 2.455c-.785.57-1.84-.196-1.54-1.118l1.286-3.966a1 1 0 
+          00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.174a1 
+          1 0 00.95-.69l1.286-3.967z"/></svg>
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 
+          3.967a1 1 0 00.95.69h4.174c.969 0 
+          1.371 1.24.588 1.81l-3.38 2.455a1 1 0 
+          00-.364 1.118l1.286 3.966c.3.922-.755 
+          1.688-1.54 1.118l-3.38-2.455a1 1 0 
+          00-1.175 0l-3.38 2.455c-.785.57-1.84-.196-1.54-1.118l1.286-3.966a1 1 0 
+          00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.174a1 
+          1 0 00.95-.69l1.286-3.967z"/></svg>
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 
+          3.967a1 1 0 00.95.69h4.174c.969 0 
+          1.371 1.24.588 1.81l-3.38 2.455a1 1 0 
+          00-.364 1.118l1.286 3.966c.3.922-.755 
+          1.688-1.54 1.118l-3.38-2.455a1 1 0 
+          00-1.175 0l-3.38 2.455c-.785.57-1.84-.196-1.54-1.118l1.286-3.966a1 1 0 
+          00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.174a1 
+          1 0 00.95-.69l1.286-3.967z"/></svg>
+        <!-- Half Star -->
+        <svg class="w-5 h-5 fill-current opacity-50" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 
+          3.967a1 1 0 00.95.69h4.174c.969 0 
+          1.371 1.24.588 1.81l-3.38 2.455a1 1 0 
+          00-.364 1.118l1.286 3.966c.3.922-.755 
+          1.688-1.54 1.118l-3.38-2.455a1 1 0 
+          00-1.175 0l-3.38 2.455c-.785.57-1.84-.196-1.54-1.118l1.286-3.966a1 1 0 
+          00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.174a1 
+          1 0 00.95-.69l1.286-3.967z"/></svg>
+        <span class="text-sm text-white ml-2">4.5</span>
+      </div>
+    </div>
+  </div>
+  <div class="p-5">
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Electronics — Commercetools</h3>
+    <p class="text-gray-600 text-sm mb-4">Headless architecture & React storefront with global scalability.</p>
+    <p class="text-sm text-green-700 font-semibold">+60% bounce rate</p>
+  </div>
+</div>
+
+
+      <!-- Repeat same for Card 2 & 3 with star sets -->
+    </div>
+  </div>
+</section>
+<section id="blog" class="py-24 bg-gray-900 text-gray-100 px-6 lg:px-20 rounded-t-[4rem]">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-green-400 mb-4">
+      Discover, Learn, Grow
+    </h2>
+    <p class="text-gray-300 max-w-2xl mx-auto text-lg mb-12">
+      Explore our blog for insights, tips, and strategies to excel in e-commerce. Stay updated and make informed decisions for your online business.
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Blog Card 1 -->
+      <div class="bg-gray-800 rounded-2xl shadow-lg p-6 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+        <div>
+          <h4 class="text-lg font-bold text-green-400 mb-2">
+            How to Future-Proof Your E-Commerce Business
+          </h4>
+          <p class="text-gray-300 text-sm mb-4">
+            Strategies and tips to keep your online store competitive in a rapidly changing digital landscape.
+          </p>
+        </div>
+        <div class="mt-auto">
+          <a href="#" class="inline-block text-green-400 font-semibold relative pb-1 group">
+            Read More
+            <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-green-400 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Blog Card 2 -->
+      <div class="bg-gray-800 rounded-2xl shadow-lg p-6 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+        <div>
+          <h4 class="text-lg font-bold text-green-400 mb-2">
+            Migration Success: Replatforming Pitfalls
+          </h4>
+          <p class="text-gray-300 text-sm mb-4">
+            Learn how to avoid common mistakes during platform migrations and make your transition smooth.
+          </p>
+        </div>
+        <div class="mt-auto">
+          <a href="#" class="inline-block text-green-400 font-semibold relative pb-1 group">
+            Read More
+            <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-green-400 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Blog Card 3 -->
+      <div class="bg-gray-800 rounded-2xl shadow-lg p-6 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+        <div>
+          <h4 class="text-lg font-bold text-green-400 mb-2">
+            Using Analytics to Boost E-Commerce Growth
+          </h4>
+          <p class="text-gray-300 text-sm mb-4">
+            Maximize sales and conversions by effectively leveraging your store’s data insights.
+          </p>
+        </div>
+        <div class="mt-auto">
+          <a href="#" class="inline-block text-green-400 font-semibold relative pb-1 group">
+            Read More
+            <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-green-400 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Blog Card 4 -->
+      <div class="bg-gray-800 rounded-2xl shadow-lg p-6 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+        <div>
+          <h4 class="text-lg font-bold text-green-400 mb-2">
+            Keys to a Frictionless Checkout Experience
+          </h4>
+          <p class="text-gray-300 text-sm mb-4">
+            Reduce cart abandonment and improve conversions with seamless checkout optimization.
+          </p>
+        </div>
+        <div class="mt-auto">
+          <a href="#" class="inline-block text-green-400 font-semibold relative pb-1 group">
+            Read More
+            <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-green-400 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Blog Card 5 -->
+      <div class="bg-gray-800 rounded-2xl shadow-lg p-6 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+        <div>
+          <h4 class="text-lg font-bold text-green-400 mb-2">
+            SEO Strategies for Quick Visibility
+          </h4>
+          <p class="text-gray-300 text-sm mb-4">
+            Improve your search rankings fast with proven SEO tips for online stores.
+          </p>
+        </div>
+        <div class="mt-auto">
+          <a href="#" class="inline-block text-green-400 font-semibold relative pb-1 group">
+            Read More
+            <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-green-400 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Blog Card 6 -->
+      <div class="bg-gray-800 rounded-2xl shadow-lg p-6 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+        <div>
+          <h4 class="text-lg font-bold text-green-400 mb-2">
+            E-Commerce Trends to Watch in 2025
+          </h4>
+          <p class="text-gray-300 text-sm mb-4">
+            Stay ahead of the curve by following the latest trends and innovations in online retail.
+          </p>
+        </div>
+        <div class="mt-auto">
+          <a href="#" class="inline-block text-green-400 font-semibold relative pb-1 group">
+            Read More
+            <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-green-400 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <p class="text-gray-300 text-lg">
+        Want to request a topic or article? <a href="#contact" class="text-green-400 font-semibold hover:underline">Contact us</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Us Section -->
+<section id="contact" class="relative py-24 bg-gray-900 text-gray-100 px-6 lg:px-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+    <!-- Section Header -->
+    <div class="text-center mb-20">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-green-400 mb-4 animate-fade-in-up">
+        Contact Us
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto animate-fade-in-up delay-100">
+        We’re here to help you unlock the full potential of your e-commerce business. 
+        Whether you have questions, need a custom solution, or want to discuss your project, 
+        our team is ready to provide expert guidance and dependable support.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12">
+
+      <!-- Contact Form -->
+      <div class="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-lg rounded-3xl p-10 shadow-2xl transform transition-all duration-500 hover:-translate-y-2 hover:shadow-3xl animate-fade-in-up">
+        <form class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-xl bg-gray-700 text-gray-100 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300">
+            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-xl bg-gray-700 text-gray-100 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300">
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input type="tel" placeholder="+91 1234567890" class="w-full px-4 py-3 rounded-xl bg-gray-700 text-gray-100 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300">
+            <input type="text" placeholder="Company Name" class="w-full px-4 py-3 rounded-xl bg-gray-700 text-gray-100 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300">
+          </div>
+          <textarea placeholder="Your Message" rows="5" class="w-full px-4 py-3 rounded-xl bg-gray-700 text-gray-100 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300"></textarea>
+          <button type="submit" class="w-full bg-green-400 text-gray-900 font-semibold py-3 rounded-xl shadow-lg hover:bg-green-500 hover:shadow-xl transition-all duration-300">
+            Contact Us Now
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info & Socials -->
+      <div class="space-y-10 animate-fade-in-up delay-200">
+
+        <!-- Info Cards -->
+        <div class="bg-gray-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500">
+          <h3 class="text-xl font-bold text-green-400 mb-2">Get in Touch</h3>
+          <p class="text-gray-300 mb-2">
+            Email: info@[yourcompany].com<br>
+            Phone: +[Country Code] [Phone Number]<br>
+            Office: [Your Company Name], [Street Address], [City, State, ZIP], [Country]
+          </p>
+        </div>
+
+        <div class="bg-gray-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500">
+          <h3 class="text-xl font-bold text-green-400 mb-2">Why Contact Us?</h3>
+          <ul class="list-disc list-inside text-gray-300 space-y-2">
+            <li>Discuss your e-commerce goals and challenges with our experts.</li>
+            <li>Learn how our technology-agnostic approach puts your business first.</li>
+            <li>Get insights on platform selection, custom development, or migrations.</li>
+            <li>Request a no-obligation consultation or project estimate.</li>
+          </ul>
+        </div>
+
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- GSAP Animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Header fast pop-in
+  gsap.to("#platforms .text-center", {
+    opacity: 1,
+    scale: 1,
+    duration: 0.4,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#platforms",
+      start: "top 90%"
+    }
+  });
+
+  // Fast card pop-in
+  gsap.utils.toArray(".platform-card").forEach((card, i) => {
+    gsap.to(card, {
+      opacity: 1,
+      scale: 1,
+      duration: 0.35,
+      delay: i * 0.08,
+      ease: "back.out(1.7)",
+      scrollTrigger: {
+        trigger: card,
+        start: "top 92%"
+      }
+    });
+  });
+</script>
+
+
+  </div>
+</section>
+
+
+
+<div id="footer"></div>
+
+<script>
+  // Load footer.html into #footer
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    })
+    .catch(error => console.error("Error loading footer:", error));
+</script>
+
+
+<!-- Blob Animation -->
+<style>
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  @keyframes blob {
+
+    0%,
+    100% {
+      border-radius: 42% 58% 70% 30% / 30% 40% 60% 70%;
+    }
+
+    50% {
+      border-radius: 72% 28% 30% 70% / 60% 50% 40% 50%;
+    }
+  }
+</style>
+
+
+
+
+<style>
+  /* Gentle float animations */
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-float-delay {
+    animation: float 5s ease-in-out infinite;
+  }
+</style>
+
+<!-- Navbar Script -->
+<script>
+  fetch("nav.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+      const script = document.createElement("script");
+      script.src = "script.js";
+      document.body.appendChild(script);
+    });
+</script>
+
+<!-- GSAP Animation -->
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    // Hero animations
+    gsap.fromTo(".animate-fadeIn", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1.2, ease: "power3.out", stagger: 0.3 });
+
+    // Floating blobs
+    gsap.to(".animate-blob", {
+      y: 30,
+      x: 20,
+      repeat: -1,
+      yoyo: true,
+      duration: 8,
+      ease: "sine.inOut"
+    });
+  });
+</script>
+
+</body>
+
+</html>

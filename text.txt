@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xelandra</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Blob Animation */
+    @keyframes blob {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      33% { transform: translate(20px,-10px) scale(1.1); }
+      66% { transform: translate(-20px,20px) scale(0.9); }
+    }
+    .animate-blob { animation: blob 8s infinite ease-in-out; }
+    .animation-delay-2000 { animation-delay: 2s; }
+    .animation-delay-4000 { animation-delay: 4s; }
+
+    /* Fade In Animation */
+    .animate-fadeIn { opacity: 0; transform: translateY(20px); animation: fadeIn 1s forwards; }
+    .animate-fadeIn.delay-300 { animation-delay: 0.3s; }
+    .animate-fadeIn.delay-600 { animation-delay: 0.6s; }
+    .animate-fadeIn.delay-900 { animation-delay: 0.9s; }
+
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    
+  </style>
+</head>
+<!-- Navbar -->
+<div id="navbar"></div>
+
+<!-- E-Commerce Development Section -->
+<section class="relative bg-gradient-to-br from-white via-green-50 to-[#f5fdf0] py-24 px-6 lg:px-20 overflow-hidden">
+
+  <!-- Decorative Blobs -->
+  <div class="absolute -top-32 -left-20 w-96 h-96 bg-green-200/40 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob"></div>
+  <div class="absolute -bottom-40 -right-20 w-96 h-96 bg-yellow-200/40 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
+
+  <!-- Content Container -->
+  <div class="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+    <!-- Left Side: Text -->
+    <div class="space-y-8">
+<h2 class="text-3xl md:text-5xl font-extrabold text-gray-900">
+  <span class="block mb-2">Comprehensive</span>
+  <span class="text-[#688a2f] relative">
+    E-Commerce Development
+    <span class="absolute left-0 bottom-0 w-full h-2 bg-[#d5e6b5] -z-10 rounded"></span>
+  </span>
+</h2>
+
+      <p class="text-lg text-gray-600 leading-relaxed">
+        Whether you’re launching a new online store, optimizing your current platform, 
+        or looking to expand into new markets, our team delivers end-to-end solutions 
+        customized to your goals. We work with leading technologies—including 
+        <span class="font-semibold text-[#688a2f]">Shopify, Magento, commercetools, WooCommerce</span>, 
+        and more—for seamless integration and future-ready performance.
+      </p>
+      <!-- <a href="#consult" class="inline-block px-8 py-4 bg-gradient-to-r from-[#688a2f] to-[#8fb54f] text-white font-semibold rounded-full shadow-lg 
+        hover:from-[#577127] hover:to-[#7ca83e] transition-all duration-300 transform hover:-translate-y-1 hover:scale-105">
+        Let’s Build Your Store
+      </a> -->
+    </div>
+
+    <!-- Right Side: Feature Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 relative">
+      <!-- Card 1 -->
+      <div class="p-6 bg-white rounded-2xl shadow-lg border border-green-100 
+                  hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+        <i class='bx bxs-cart text-[#688a2f] text-4xl mb-3'></i>
+        <h3 class="text-lg font-semibold text-gray-800">Full-cycle Development</h3>
+        <p class="text-sm text-gray-600">From strategy to deployment, we cover it all.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="p-6 bg-white rounded-2xl shadow-lg border border-green-100 
+                  hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+        <i class='bx bx-transfer text-[#688a2f] text-4xl mb-3'></i>
+        <h3 class="text-lg font-semibold text-gray-800">Platform Migration</h3>
+        <p class="text-sm text-gray-600">Seamless upgrades and migrations.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="p-6 bg-white rounded-2xl shadow-lg border border-green-100 
+                  hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+        <i class='bx bxs-paint text-[#688a2f] text-4xl mb-3'></i>
+        <h3 class="text-lg font-semibold text-gray-800">UI/UX Design</h3>
+        <p class="text-sm text-gray-600">Conversion-driven, modern designs.</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="p-6 bg-white rounded-2xl shadow-lg border border-green-100 
+                  hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+        <i class='bx bxs-cog text-[#688a2f] text-4xl mb-3'></i>
+        <h3 class="text-lg font-semibold text-gray-800">Custom Integrations</h3>
+        <p class="text-sm text-gray-600">Tailored features to fit your needs.</p>
+      </div>
+      <!-- Card 5 -->
+      <div class="p-6 bg-white rounded-2xl shadow-lg border border-green-100 
+                  hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+        <i class='bx bxs-shield-alt-2 text-[#688a2f] text-4xl mb-3'></i>
+        <h3 class="text-lg font-semibold text-gray-800">Security</h3>
+        <p class="text-sm text-gray-600">Enterprise-grade security & performance.</p>
+      </div>
+      <!-- Card 6 -->
+      <div class="p-6 bg-white rounded-2xl shadow-lg border border-green-100 
+                  hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+        <i class='bx  bx-help-circle  text-[#688a2f] text-4xl mb-3'></i>
+        <h3 class="text-lg font-semibold text-gray-800">Support</h3>
+        <p class="text-sm text-gray-600">Ongoing maintenance & improvements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="relative bg-gradient-to-br from-white via-green-50 to-white py-28 px-6 lg:px-20 overflow-hidden">
+
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    
+    <!-- Heading -->
+    <div class="text-center mb-20">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+        Why <span class="relative text-[#688a2f]">
+          Choose Us?
+        </span>
+      </h2>
+      <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+        We combine expertise, innovation, and collaboration to deliver <br> future-ready e-commerce solutions.
+      </p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-24">
+      
+      <!-- Card -->
+      <div class="p-8 rounded-2xl bg-white/80 backdrop-blur-md shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-[#688a2f]/10 text-[#688a2f] mb-5">
+          <i class='bx bx-globe text-3xl'></i>
+        </div>
+        <h3 class="font-semibold text-lg text-gray-900">Platform Independence</h3>
+        <p class="text-gray-600 mt-3 text-sm">
+          We recommend and support the best technology to drive your growth.
+        </p>
+      </div>
+
+<div class="p-8 rounded-2xl bg-white/80 backdrop-blur-md shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+  <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-[#688a2f]/10 text-[#688a2f] mb-5">
+    <i class='bx bx-user-check text-3xl'></i>
+  </div>
+  <h3 class="font-semibold text-lg text-gray-900">Partner-Led Approach</h3>
+  <p class="text-gray-600 mt-3 text-sm">
+    Transparent collaboration ensures tailored solutions from day one.
+  </p>
+</div>
+
+
+      <div class="p-8 rounded-2xl bg-white/80 backdrop-blur-md shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-[#688a2f]/10 text-[#688a2f] mb-5">
+          <i class='bx bx-group text-3xl'></i>
+        </div>
+        <h3 class="font-semibold text-lg text-gray-900">Expert Team</h3>
+        <p class="text-gray-600 mt-3 text-sm">
+          Our seasoned engineers and designers deliver across industries.
+        </p>
+      </div>
+
+      <div class="p-8 rounded-2xl bg-white/80 backdrop-blur-md shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-[#688a2f]/10 text-[#688a2f] mb-5">
+          <i class='bx bx-bulb text-3xl'></i>
+        </div>
+        <h3 class="font-semibold text-lg text-gray-900">Continuous Innovation</h3>
+        <p class="text-gray-600 mt-3 text-sm">
+          Stay ahead with the latest tools, automation, and AI-driven solutions.
+        </p>
+      </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div class="bg-gradient-to-r from-[#688a2f] to-green-700 text-white rounded-3xl p-12 text-center shadow-xl">
+      <h3 class="text-3xl md:text-4xl font-bold mb-4">
+        Ready to Transform Your Online Business?
+      </h3>
+      <p class="text-lg text-green-100 max-w-2xl mx-auto mb-8">
+        Let’s turn your e-commerce vision into reality. Contact us today for a personalized consultation.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-6">
+        <a href="#contact" class="px-8 py-3 bg-white text-[#688a2f] font-semibold rounded-xl shadow-lg hover:bg-green-50 transition">
+          Contact Us
+        </a>
+        <a href="#discovery" class="px-8 py-3 bg-green-900/40 border border-white/50 text-white font-semibold rounded-xl hover:bg-green-900/60 transition">
+          Book a Free Discovery Call
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- About Us Section -->
+<section class="relative bg-gradient-to-br from-white via-green-50 to-[#f5fdf0] py-28 px-6 lg:px-20 overflow-hidden">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+
+    <!-- Text Content -->
+    <div class="space-y-8 about-text">
+      <h2 class="text-5xl font-extrabold text-gray-900">
+        About <span class="text-green-700">Us</span>
+      </h2>
+      <p class="text-lg text-gray-700 max-w-xl">
+        We drive innovation in digital commerce with scalable, tailored, and future-ready solutions. Our mission is to empower businesses to thrive online with cutting-edge technologies and industry expertise.
+      </p>
+      <div class="space-y-4 about-features">
+        <div class="flex items-start space-x-4 feature">
+          <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-green-100 text-green-700 rounded-full text-xl font-bold">💡</div>
+          <p class="text-gray-700">
+            <strong>Innovative Solutions:</strong> We create forward-thinking strategies to solve real e-commerce challenges.
+          </p>
+        </div>
+        <div class="flex items-start space-x-4 feature">
+          <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-green-100 text-green-700 rounded-full text-xl font-bold">🚀</div>
+          <p class="text-gray-700">
+            <strong>Growth & Scale:</strong> Helping businesses expand with efficient, technology-agnostic solutions.
+          </p>
+        </div>
+        <div class="flex items-start space-x-4 feature">
+          <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-green-100 text-green-700 rounded-full text-xl font-bold">🤝</div>
+          <p class="text-gray-700">
+            <strong>Trusted Partnership:</strong> Building long-term relationships based on transparency and excellence.
+          </p>
+        </div>
+      </div>
+      <a href="mailto:careers@yourcompany.com" class="inline-block mt-6 px-8 py-3 bg-green-700 text-white font-semibold rounded-lg shadow hover:bg-green-800 transition">
+        Join Our Team
+      </a>
+    </div>
+
+    <!-- Visual / Image -->
+    <div class="relative about-image">
+      <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=80" alt="Team collaboration" class="rounded-3xl shadow-xl border-4 border-green-100">
+      <!-- Decorative circles -->
+      <div class="absolute -top-10 -right-10 w-32 h-32 bg-green-100 rounded-full mix-blend-multiply filter blur-2xl opacity-50"></div>
+      <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-yellow-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Heading
+  gsap.from(".about-text h2", {
+    x: -80,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".about-text h2",
+      start: "top 80%",   // when heading is 80% into viewport
+      toggleActions: "play reverse play reverse"
+    }
+  });
+
+  // Paragraph
+  gsap.from(".about-text p", {
+    x: -80,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".about-text p",
+      start: "top 85%",
+      toggleActions: "play reverse play reverse"
+    }
+  });
+
+  // Features
+  gsap.from(".about-features .feature", {
+    x: -50,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: "back.out(1.7)",
+    scrollTrigger: {
+      trigger: ".about-features",
+      start: "top 85%",
+      toggleActions: "play reverse play reverse"
+    }
+  });
+
+  // Image
+  gsap.from(".about-image", {
+    x: 100,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".about-image",
+      start: "top 85%",
+      toggleActions: "play reverse play reverse"
+    }
+  });
+</script>
+
+
+<div id="footer"></div>
+
+<script>
+  // Load footer.html into #footer
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    })
+    .catch(error => console.error("Error loading footer:", error));
+</script>
+
+
+<!-- Blob Animation -->
+<style>
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  @keyframes blob {
+    0%, 100% { border-radius: 42% 58% 70% 30% / 30% 40% 60% 70%; }
+    50% { border-radius: 72% 28% 30% 70% / 60% 50% 40% 50%; }
+  }
+</style>
+
+
+
+
+<style>
+/* Gentle float animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+.animate-float-delay {
+  animation: float 5s ease-in-out infinite;
+}
+</style>
+
+  <!-- Navbar Script -->
+  <script>
+    fetch("nav.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+        const script = document.createElement("script");
+        script.src = "script.js";
+        document.body.appendChild(script);
+      });
+  </script>
+
+  <!-- GSAP Animation -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      // Hero animations
+      gsap.fromTo(".animate-fadeIn", {opacity:0, y:20}, {opacity:1, y:0, duration:1.2, ease:"power3.out", stagger:0.3});
+      
+      // Floating blobs
+      gsap.to(".animate-blob", {
+        y: 30,
+        x: 20,
+        repeat: -1,
+        yoyo: true,
+        duration: 8,
+        ease: "sine.inOut"
+      });
+    });
+  </script>
+
+</body>
+</html>
